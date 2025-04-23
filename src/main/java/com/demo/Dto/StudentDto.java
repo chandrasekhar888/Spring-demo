@@ -1,7 +1,11 @@
 package com.demo.Dto;
 
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
 public class StudentDto {
 	private long id;
+	@NotNull @Size(min=2,max=10,message="atleast some char") 
 	private String name;
 	private String course;
 	private String email;
