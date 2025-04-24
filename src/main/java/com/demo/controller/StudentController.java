@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.demo.Dto.StudentDto;
 import com.demo.service.StudentService;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 @RestController
 public class StudentController {
@@ -57,7 +57,7 @@ public class StudentController {
 	  @GetMapping("/findallstudents")
 	    public ResponseEntity<List<StudentDto>> findstudent(
 	    		@RequestParam(name="pageNo",defaultValue="0",required=false)int pageNo,
-	    		@RequestParam(name="pageSize",defaultValue="3",required=false)int pageSize,
+	    		@RequestParam(name="pageSize",defaultValue="8",required=false)int pageSize,
 	    		@RequestParam(name="sortBy",defaultValue="id",required=false)String sortBy,
 	    		@RequestParam(name="sortDir",defaultValue="id",required=false)String sortDir
 	    		) {

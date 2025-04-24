@@ -83,6 +83,10 @@
 
         <input type="submit" value="save">
     </form>
+    <c:if test="${not empty msg}">
+    <p style="color:green;">${msg}</p>
+</c:if>
+    
 </div>
 
 </body>
