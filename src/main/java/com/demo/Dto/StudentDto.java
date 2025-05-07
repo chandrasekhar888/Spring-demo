@@ -1,27 +1,22 @@
 package com.demo.Dto;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class StudentDto {
 
-    private long id;
-
-    @javax.validation.constraints.NotNull
-    @javax.validation.constraints.Size(min = 2, max = 10, message = "Name must be between 2 and 10 characters")
+    @NotNull(message = "Name should not be null")
+    @Size(min = 2, max = 30, message = "Name must be between 2 and 30 characters")
     private String name;
 
     private String course;
+
+    @NotNull(message = "Email should not be null")
+    @Email(message = "Enter a valid email")
     private String email;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
+    // Getters and Setters
     public String getName() {
         return name;
     }
@@ -45,4 +40,9 @@ public class StudentDto {
     public void setEmail(String email) {
         this.email = email;
     }
+
+	public long getId() {
+		// normal purpose
+		return 0;
+	}
 }

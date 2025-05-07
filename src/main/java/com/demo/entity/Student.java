@@ -1,13 +1,6 @@
 package com.demo.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
 
 @Entity
 public class Student {
@@ -16,14 +9,12 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @NotNull(message = "Name should not be null")
-    @Size(min = 2, max = 30, message = "Name must be between 2 and 30 characters")
     @Column(name = "name", nullable = false, unique = true)
     private String name;
 
     private String course;
 
-    @NotNull(message = "Email should not be null")
+    @Column(nullable = false, unique = true)
     private String email;
 
     // Getters and Setters

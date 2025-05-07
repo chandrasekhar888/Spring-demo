@@ -45,7 +45,7 @@ public class StudentService {
         Student savedEntity = repo.save(s);
         BeanUtils.copyProperties(savedEntity, dto);
 
-		return null;
+		return dto;
 	}
 	//traditional approach
 //	public List<StudentDto> findstudent() {

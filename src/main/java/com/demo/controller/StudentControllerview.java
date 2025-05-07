@@ -55,21 +55,35 @@ public class StudentControllerview {
     }
 
 
-	@DeleteMapping("/deleteReg")
-	public ResponseEntity<String> deleteStudent( @RequestParam Long id ) {
-		service.deletestudent(id);
-	    return new ResponseEntity<>("Student with ID " + id + " deleted successfully.", HttpStatus.OK);
+    @RequestMapping("/deleteReg")
+    public String deleteStudent(@RequestParam Long id, ModelMap model) {
+        service.deletestudent(id);
+        // Optional: add success message to show after deletion
+        model.addAttribute("msg", "Student deleted successfully.");
+        return "redirect:/listReg";  // Redirect to list page after deletion
+    }
 
-	}
-	  @PutMapping("/updateReg")
-	    public ResponseEntity<StudentDto> updateStudent(@RequestParam long id, @RequestBody StudentDto dto) {
-	        StudentDto updatedStudent = service.updateStudent(id, dto);
-	        return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
-	    }
+//	  @PutMapping("/updateReg")
+//	    public ResponseEntity<StudentDto> updateStudent(@RequestParam long id, @RequestBody StudentDto dto) {
+//	        StudentDto updatedStudent = service.updateStudent(id, dto);
+//	        return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
+//	    }
+//	  
+	  //modifying update for http 
+    @RequestMapping("/updateReg")
+    public String updateStudent(@ModelAttribute StudentDto dto, Model model) {
+        service.updateStudent(dto.getId(), dto); // id is inside dto now
+        model.addAttribute("msg", "Student updated successfully!");
+        model.addAttribute("fetchid", dto); // Pass updated DTO back to the view
+        return "update_registration"; // Return updated page
+    }
+
+
+  
 	  @GetMapping("/findallstudentsReg")
 	    public String findstudent(
 	    		@RequestParam(name="pageNo",defaultValue="0",required=false)int pageNo,
-	    		@RequestParam(name="pageSize",defaultValue="3",required=false)int pageSize,
+	    		@RequestParam(name="pageSize",defaultValue="5",required=false)int pageSize,
 	    		@RequestParam(name="sortBy",defaultValue="id",required=false)String sortBy,
 	    		@RequestParam(name="sortDir",defaultValue="asc",required=false)String sortDir,
 	    		Model model 
@@ -79,14 +93,23 @@ public class StudentControllerview {
 	        return "list_registration";
 
 	  }
+//		@GetMapping("/FindByIdReg")
+//	  public ResponseEntity<?> getbyid(@RequestParam long id) {
+//		  StudentDto fetchid =service.getbyid(id);
+//		  if (fetchid == null) {
+//		        return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
+//	        }
+//	        return new ResponseEntity<>(fetchid, HttpStatus.OK);
+//	  }
+//changing for update
 		@GetMapping("/FindByIdReg")
-	  public ResponseEntity<?> getbyid(@RequestParam long id) {
-		  StudentDto fetchid =service.getbyid(id);
-		  if (fetchid == null) {
-		        return new ResponseEntity<>("Student not found", HttpStatus.NOT_FOUND);
-	        }
-	        return new ResponseEntity<>(fetchid, HttpStatus.OK);
-	  }
+		  public String getbyid(@RequestParam long id,Model model) {
+			  StudentDto fetchid =service.getbyid(id);
+			 model.addAttribute("fetchid",fetchid);
+		        return "update_registration";
+		  }
+		
+		
 		@GetMapping("/FindByCourseReg")
 		public ResponseEntity<List<StudentDto>> getbycourse( @RequestParam String course ){
 			List<StudentDto> fetchcourse =	service.getbycourse(course);
