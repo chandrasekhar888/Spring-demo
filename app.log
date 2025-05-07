@@ -298,3 +298,54 @@ Identify and stop the process that's listening on port 8080 or configure this ap
 2025-05-07 15:40:01.358  INFO 30488 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
 2025-05-07 15:40:07.197  INFO 30488 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-07 15:40:07.198  INFO 30488 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-07 15:40:07.199  INFO 30488 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-07 15:40:07.205  INFO 30488 --- [http-nio-8080-exec-1] com.demo.controller.StudentController    : Fetching all students: pageNo=0, pageSize=5, sortBy=name, sortDir=dsc
+2025-05-07 15:40:07.223  INFO 30488 --- [http-nio-8080-exec-1] com.demo.controller.StudentController    : Fetched 5 students
+2025-05-07 15:53:26.213  INFO 30488 --- [Thread-11] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-07 15:53:26.248  INFO 30488 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-05-07 15:53:26.288  INFO 30488 --- [Thread-11] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2025-05-07 15:53:26.508  INFO 30488 --- [restartedMain] com.demo.DemoApplication                 : Starting DemoApplication using Java 21.0.3 on DESKTOP-6K4M1V5 with PID 30488 (C:\Users\chandra sekhar\Documents\workspace-spring-tool-suite\Demo\Spring-Demo\target\classes started by chandra sekhar in C:\Users\chandra sekhar\Documents\workspace-spring-tool-suite\Demo\Spring-Demo)
+2025-05-07 15:53:26.508  INFO 30488 --- [restartedMain] com.demo.DemoApplication                 : No active profile set, falling back to default profiles: default
+2025-05-07 15:53:26.687  INFO 30488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-07 15:53:26.697  INFO 30488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 1 JPA repository interfaces.
+2025-05-07 15:53:26.792  INFO 30488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-07 15:53:26.793  INFO 30488 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-07 15:53:26.793  INFO 30488 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-05-07 15:53:26.888  INFO 30488 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-07 15:53:26.890  INFO 30488 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-07 15:53:26.890  INFO 30488 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 378 ms
+2025-05-07 15:53:26.923  INFO 30488 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-07 15:53:26.928  INFO 30488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-05-07 15:53:26.989  INFO 30488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-05-07 15:53:26.990  INFO 30488 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-07 15:53:27.064  INFO 30488 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-07 15:53:27.064  INFO 30488 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-07 15:53:27.073  INFO 30488 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-07 15:53:27.145  WARN 30488 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-07 15:53:27.231  INFO 30488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-07 15:53:27.233  INFO 30488 --- [restartedMain] com.demo.DemoApplication                 : Started DemoApplication in 0.757 seconds (JVM running for 1232.59)
+2025-05-07 15:53:27.234  INFO 30488 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2025-05-07 16:01:53.590  INFO 30488 --- [Thread-15] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-07 16:01:53.596  INFO 30488 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-05-07 16:01:53.604  INFO 30488 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2025-05-07 16:01:53.702  INFO 30488 --- [restartedMain] com.demo.DemoApplication                 : Starting DemoApplication using Java 21.0.3 on DESKTOP-6K4M1V5 with PID 30488 (C:\Users\chandra sekhar\Documents\workspace-spring-tool-suite\Demo\Spring-Demo\target\classes started by chandra sekhar in C:\Users\chandra sekhar\Documents\workspace-spring-tool-suite\Demo\Spring-Demo)
+2025-05-07 16:01:53.702  INFO 30488 --- [restartedMain] com.demo.DemoApplication                 : No active profile set, falling back to default profiles: default
+2025-05-07 16:01:53.908  INFO 30488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-07 16:01:53.918  INFO 30488 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 1 JPA repository interfaces.
+2025-05-07 16:01:54.003  INFO 30488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2025-05-07 16:01:54.004  INFO 30488 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-07 16:01:54.005  INFO 30488 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.55]
+2025-05-07 16:01:54.104  INFO 30488 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-07 16:01:54.106  INFO 30488 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-07 16:01:54.106  INFO 30488 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 400 ms
+2025-05-07 16:01:54.143  INFO 30488 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-07 16:01:54.151  INFO 30488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-05-07 16:01:54.171  INFO 30488 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-05-07 16:01:54.172  INFO 30488 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2025-05-07 16:01:54.229  INFO 30488 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2025-05-07 16:01:54.230  INFO 30488 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-07 16:01:54.246  INFO 30488 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-05-07 16:01:54.356  WARN 30488 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-07 16:01:54.467  INFO 30488 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2025-05-07 16:01:54.469  INFO 30488 --- [restartedMain] com.demo.DemoApplication                 : Started DemoApplication in 0.806 seconds (JVM running for 1739.826)
+2025-05-07 16:01:54.471  INFO 30488 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

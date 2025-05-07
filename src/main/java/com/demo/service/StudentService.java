@@ -91,6 +91,7 @@ public class StudentService {
 		return studentDto;
 	
 }
+	//custom exception we are throwing 
 	public StudentDto getbyid(long id) {
 		Student orElseThrow = repo.findById(id).orElseThrow(
 				()->new ResourceNotFound("record not found"+id)
@@ -104,7 +105,15 @@ public class StudentService {
 		return null;
 		// TODO Auto-generated method stub
 		
-	}
+	} 
+	
+	/* You are throwing an exception (ResourceNotFound) when the student is not found. 
+	 * The orElseThrow() method requires a supplier of an exception 
+	 * (which is why you use the new keyword to create an instance of the exception). 
+	 * The lambda expression () -> new ResourceNotFound("record not found" + id) is supplying 
+	 * the exception when the value is not found.
+
+*/
 	public List<StudentDto> getbycourse(String course) {
 		List<Student> bycourse = repo.findBycourse(course);
 		List<StudentDto> ListCourse = bycourse.stream().map(s->convert(s)).collect(Collectors.toList());
