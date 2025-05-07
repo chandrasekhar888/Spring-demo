@@ -62,7 +62,7 @@ public class StudentController {
             @RequestParam(name = "pageNo", defaultValue = "0", required = false) int pageNo,
             @RequestParam(name = "pageSize", defaultValue = "8", required = false) int pageSize,
             @RequestParam(name = "sortBy", defaultValue = "id", required = false) String sortBy,
-            @RequestParam(name = "sortDir", defaultValue = "id", required = false) String sortDir) {
+            @RequestParam(name = "sortDir", defaultValue = "asc", required = false) String sortDir) {
 
         logger.info("Fetching all students: pageNo={}, pageSize={}, sortBy={}, sortDir={}", pageNo, pageSize, sortBy, sortDir);
 

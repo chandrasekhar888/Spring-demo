@@ -82,7 +82,7 @@ public class StudentService {
 		Page<Student> all = repo.findAll(pageable);
 		List<Student> content = all.getContent(); //converting page of students to list of students
 		
-		List<StudentDto> collect = all.stream().map(s->convert(s)).collect(Collectors.toList());
+		List<StudentDto> collect = content.stream().map(s->convert(s)).collect(Collectors.toList());
 		return collect;
 	}
 	public StudentDto convert(Student s) {

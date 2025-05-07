@@ -6,6 +6,14 @@ import javax.validation.constraints.Size;
 
 public class StudentDto {
 
+	private Long id ;
+	public Long getId() {
+	    return id;
+	}
+
+	public void setId(Long id) {
+	    this.id = id;
+	}
     @NotNull(message = "Name should not be null")
     @Size(min = 2, max = 30, message = "Name must be between 2 and 30 characters")
     private String name;
@@ -41,8 +49,5 @@ public class StudentDto {
         this.email = email;
     }
 
-	public long getId() {
-		// normal purpose
-		return 0;
-	}
+
 }
