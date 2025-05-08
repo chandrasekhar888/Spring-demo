@@ -75,13 +75,13 @@
     <form action="/updateReg" method="post">
     <input type="hidden" name="id" value="${fetchid.id}" />
     <label for="name">Name:</label><br>
-    <input type="text" id="name" name="name" value="${fetchid.name}" required><br>
+    <input type="text" name="name" value="${fetchid.name}" required><br>
 
     <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" value="${fetchid.email}" required><br>
+    <input type="email" name="email" value="${fetchid.email}" required><br>
 
     <label for="course">Course:</label><br>
-    <input type="text" id="course" name="course" value="${fetchid.course}" required><br>
+    <input type="text" name="course" value="${fetchid.course}" required><br>
 
     <input type="submit" value="Update">
 </form>

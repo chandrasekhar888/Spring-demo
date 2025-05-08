@@ -62,6 +62,14 @@ public class StudentControllerview {
         model.addAttribute("msg", "Student deleted successfully.");
         return "redirect:/listReg";  // Redirect to list page after deletion
     }
+    //this is for after update redirect
+    @RequestMapping("/listReg")
+    public String listStudents(Model model) {
+        List<StudentDto> students = service.findstudent(0, 5, "id", "asc");  // Adjust pagination if needed
+        model.addAttribute("students", students);
+        return "list_registration";  // Your JSP page to display the list
+    }
+
 
 //	  @PutMapping("/updateReg")
 //	    public ResponseEntity<StudentDto> updateStudent(@RequestParam long id, @RequestBody StudentDto dto) {
@@ -69,17 +77,14 @@ public class StudentControllerview {
 //	        return new ResponseEntity<>(updatedStudent, HttpStatus.OK);
 //	    }
 //	  
-	  //modifying update for http 
+	  //------------modifying update for http -------working on update
     @RequestMapping("/updateReg")
-    public String updateStudent(@ModelAttribute StudentDto dto, Model model) {
-        service.updateStudent(dto.getId(), dto); // id is inside dto now
-        model.addAttribute("msg", "Student updated successfully!");
-        model.addAttribute("fetchid", dto); // Pass updated DTO back to the view
-        return "update_registration"; // Return updated page
+    public String updateStudent(@ModelAttribute StudentDto dto) {
+        service.updateStudent(dto.getId(), dto);
+        return "redirect:/listReg";
     }
 
 
-  
 	  @GetMapping("/findallstudentsReg")
 	    public String findstudent(
 	    		@RequestParam(name="pageNo",defaultValue="0",required=false)int pageNo,
@@ -101,13 +106,16 @@ public class StudentControllerview {
 //	        }
 //	        return new ResponseEntity<>(fetchid, HttpStatus.OK);
 //	  }
+	  
 //changing for update
-		@GetMapping("/FindByIdReg")
-		  public String getbyid(@RequestParam long id,Model model) {
-			  StudentDto fetchid =service.getbyid(id);
-			 model.addAttribute("fetchid",fetchid);
-		        return "update_registration";
-		  }
+	  @GetMapping("/FindByIdReg")
+	  public String getbyid(@RequestParam long id, 
+			  Model model) { //Which ever id comes here we are fetching it and using model
+		  StudentDto fetchid =service.getbyid(id);
+		  model.addAttribute("fetchid",fetchid);
+	        return "update_registration";
+	  }
+
 		
 		
 		@GetMapping("/FindByCourseReg")

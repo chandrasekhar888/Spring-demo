@@ -36,12 +36,11 @@ public class StudentService {
 	public void deletestudent(Long id) {
         repo.deleteById(id);		
 	}
-	public StudentDto updateStudent(long id, StudentDto dto) {
-		// TODO Auto-generated method stub
-		Student s = new Student();
+	public StudentDto updateStudent(Long id, StudentDto dto) {
+		 if (dto.getId() == null) {
+		        throw new IllegalArgumentException("Student ID cannot be null");
+		    }		Student s = new Student();
         BeanUtils.copyProperties(dto, s);
-		s.setId(id);  // 🔥 Overwrite the ID from body with the one from URL
-
         Student savedEntity = repo.save(s);
         BeanUtils.copyProperties(savedEntity, dto);
 
@@ -92,17 +91,18 @@ public class StudentService {
 	
 }
 	//custom exception we are throwing 
-	public StudentDto getbyid(long id) {
-		Student orElseThrow = repo.findById(id).orElseThrow(
-				()->new ResourceNotFound("record not found"+id)
-				);
+	public StudentDto getbyid(Long id) {
+		Student student = repo.findById(id)
+		        .orElseThrow(() -> new ResourceNotFound("Student with ID " + id + " not found"));
+	    
+			    return convert(student);
+			
 		
 	//	Optional<Student> byId = repo.findById(id);
 //		if(byId.isPresent()) {
 //		Student student = byId.get();//optional class object convert to entity by using get 
 //		return convert(student);
 //		}
-		return null;
 		// TODO Auto-generated method stub
 		
 	} 
@@ -128,6 +128,7 @@ public class StudentService {
 	    }
 	    return null;
 	}
+	
 
 	
 
